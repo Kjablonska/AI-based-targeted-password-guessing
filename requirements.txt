@@ -1,0 +1,26 @@
+# Core ML and NLP libraries
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.12.0
+tokenizers>=0.13.0
+
+# Model training and optimization
+peft>=0.4.0
+trl>=0.7.0
+accelerate>=0.20.0
+bitsandbytes>=0.39.0
+
+# Hugging Face integration
+huggingface-hub>=0.15.0
+
+# Utility libraries
+python-Levenshtein>=0.21.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+
+# Standard libraries (usually included with Python but listed for completeness)
+# json - built-in
+# sys - built-in
+# time - built-in
+# gc - built-in
+# collections - built-in
