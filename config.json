@@ -1,0 +1,73 @@
+[
+  {
+    "train": [
+      {
+        "id": 0,
+        "name": "T5",
+        "description": "T5 training",
+        "model_name": "google-t5/t5-base",
+        "model_path": "t5/model",
+        "training_set_path": "datasets/train.jsonl"
+      },
+      {
+        "id": 1,
+        "name": "BART",
+        "description": "BART training",
+        "model_name": "facebook/bart-base",
+        "model_path": "bart/model",
+        "training_set_path": "datasets/train.jsonl"
+      },
+      {
+        "id": 2,
+        "name": "Llama",
+        "description": "Llama training",
+        "model_name": "meta-llama/Llama-3.2-1B",
+        "model_path": "llama/model",
+        "training_set_path": "datasets/train-llama.jsonl"
+      }
+    ]
+  },
+  {
+    "test": [
+      {
+        "id": 0,
+        "name": "T5",
+        "description": "T5 testing",
+        "model_name": "google-t5/t5-base",
+        "model_path": "t5/model",
+        "out_path": "t5/metrics",
+        "test_set_path": "datasets/test.jsonl",
+        "guesses": 1000,
+        "temperature": 1.0,
+        "top_k": 50,
+        "top_p": 0.9
+      },
+      {
+        "id": 0,
+        "name": "BART",
+        "description": "BART testing",
+        "model_name": "facebook/bart-base",
+        "model_path": "bart/model",
+        "out_path": "bart/metrics",
+        "test_set_path": "datasets/test.jsonl",
+        "guesses": 1000,
+        "temperature": 1.0,
+        "top_k": 50,
+        "top_p": 0.9
+      },
+      {
+        "id": 0,
+        "name": "Llama",
+        "description": "Llama testing",
+        "model_name": "meta-llama/Llama-3.2-1B",
+        "model_path": "llama/model",
+        "out_path": "llama/metrics",
+        "test_set_path": "datasets/test-llama.jsonl",
+        "guesses": 1000,
+        "temperature": 1.0,
+        "top_k": 50,
+        "top_p": 0.9
+      }
+    ]
+  }
+]
