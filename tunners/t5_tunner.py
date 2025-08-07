@@ -32,7 +32,8 @@ class FineTuneT5(FineTune):
         lr_scheduler = AdafactorSchedule(optimizer)
         
         early_stop_callback = EarlyStoppingCallback(early_stopping_patience=EARLY_STOPPING_PATIENCE, early_stopping_threshold=EARLY_STOPPING_THRESHOLD)
-        trainer = Seq2SeqTrainer(
+        
+        self.trainer = Seq2SeqTrainer(
             model=self.model,
             optimizers=(optimizer,lr_scheduler),
             args=self.training_args,

@@ -39,7 +39,7 @@ class BARTTunner(Tunner):
         lr_scheduler = AdafactorSchedule(optimizer)
         early_stop_callback = EarlyStoppingCallback(early_stopping_patience=EARLY_STOPPING_PATIENCE, early_stopping_threshold=EARLY_STOPPING_THRESHOLD)
         
-        trainer = Trainer(
+        self.trainer = Trainer(
             model=self.model,
             optimizers=(optimizer,lr_scheduler),
             args=self.training_args,

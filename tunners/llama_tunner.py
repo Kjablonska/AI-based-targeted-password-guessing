@@ -1,8 +1,6 @@
-from transformers import EarlyStoppingCallback, AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
-from peft import LoraConfig, get_peft_model
+from transformers import EarlyStoppingCallback, AutoModelForCausalLM, AutoTokenizer
 from transformers.optimization import Adafactor, AdafactorSchedule
 from trl import SFTTrainer
-from peft import LoraConfig
 from huggingface_hub import login
 from fine_tune import FineTune
 from constants import HUGGING_FACE_TOKEN, BOS_TOKEN, EOS_TOKEN, EARLY_STOPPING_PATIENCE, EARLY_STOPPING_THRESHOLD, MAX_MODEL_INPUTS_LENGHT_LLAMA, MAX_SEQUENCE_LENGTH
@@ -41,7 +39,7 @@ class FineTuneLLama(FineTune):
 
         early_stop_callback = EarlyStoppingCallback(early_stopping_patience=EARLY_STOPPING_PATIENCE, early_stopping_threshold=EARLY_STOPPING_THRESHOLD)
 
-        trainer = SFTTrainer(
+        self.trainer = SFTTrainer(
             model=self.model,
             optimizers=(optimizer, lr_scheduler),
             train_dataset=self.dataset["train"],
@@ -55,4 +53,3 @@ class FineTuneLLama(FineTune):
         )
 
         super().train()
-

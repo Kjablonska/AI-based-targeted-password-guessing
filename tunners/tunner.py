@@ -72,8 +72,8 @@ class Tunner():
 
     def train(self):
         print("Start training...")
-        self.train()
+        self.trainer.train()
         print("Training completed. Saving model...")
-        self.save_model(f"{self.model_path}")
+        self.trainer.save_model(f"{self.model_path}")
         self.tokenizer.save_pretrained(f"{self.model_path}")
         print("End")
